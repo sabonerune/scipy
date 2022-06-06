@@ -187,7 +187,7 @@ def get_hash(frompath, topath):
 def get_cython_dependencies(fullfrompath):
     fullfromdir = os.path.dirname(fullfrompath)
     deps = set()
-    with open(fullfrompath, 'r') as f:
+    with open(fullfrompath, 'r', encoding='utf-8') as f:
         pxipattern = re.compile(r'include "([a-zA-Z0-9_]+\.pxi)"')
         pxdpattern1 = re.compile(r'from \. cimport ([a-zA-Z0-9_]+)')
         pxdpattern2 = re.compile(r'from \.([a-zA-Z0-9_]+) cimport')
