@@ -29,7 +29,10 @@ cdef class MessageStream:
         # Fall back to temporary files
         fd, filename = tempfile.mkstemp(prefix='scipy-')
         os.close(fd)
-        self._filename = filename.encode(sys.getfilesystemencoding())
+        if os.name == "nt":
+            self._filename = filename.encode("mbcs")
+        else:
+            self._filename = filename.encode(sys.getfilesystemencoding())
         self.handle = stdio.fopen(self._filename, "wb+")
         if self.handle == NULL:
             stdio.remove(self._filename)
