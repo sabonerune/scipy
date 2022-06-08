@@ -60,6 +60,7 @@ MICRO = 1
 ISRELEASED = True
 IS_RELEASE_BRANCH = True
 VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
+VERSION += "+MyFix" + str(1)
 
 
 # Return the git revision as a string
