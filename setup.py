@@ -57,10 +57,10 @@ Operating System :: MacOS
 MAJOR = 1
 MINOR = 8
 MICRO = 1
-ISRELEASED = True
+ISRELEASED = False
 IS_RELEASE_BRANCH = True
 VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
-VERSION += "+MyFix" + str(1)
+VERSION += "+MyFix" + str(2)
 
 
 # Return the git revision as a string
